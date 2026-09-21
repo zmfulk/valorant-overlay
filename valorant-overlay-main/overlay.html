@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valorant Production Overlay</title>
+  <link rel="stylesheet" href="overlay.css">
+</head>
+<body>
+    <div class="map-box" id="mapBox">
+      <span class="map-label">MAP:</span>
+      <span class="map-name" id="mapName">ASCENT</span>
+    </div>
+
+    <div class="league-box" id="leagueBox">
+      <span class="league-label">LEAGUE:</span>
+      <span class="league-name" id="leagueName">NACE</span>
+      <img id="leagueLogo" src="" alt="League Logo" class="league-logo-img">
+    </div>
+
+    <div class="overlay-container">
+    
+    <!-- 1. Continuous Top Bar -->
+    <div class="hud-top-bar">
+      <!-- Far Left: Series Score -->
+      <div class="score-box left-score" id="team1Score">0</div>
+
+      <!-- Left Team Name -->
+      <div class="team-meta left-meta">
+        <span class="team-name" id="team1Name">CLEVELAND STATE</span>
+      </div>
+
+      <!-- Center Match Info -->
+      <div class="center-info">
+        <span class="match-phase" id="matchPhase">Finals</span>
+        <span class="match-meta" id="matchMeta">BEST OF 3</span>
+      </div>
+
+      <!-- Right Team Name -->
+      <div class="team-meta right-meta">
+        <span class="team-name" id="team2Name">PURDUE FORT WAYNE</span>
+      </div>
+
+      <!-- Far Right: Series Score -->
+      <div class="score-box right-score" id="team2Score">0</div>
+    </div>
+
+    <!-- 2. Outer Team Logos -->
+    <div class="outer-logo left-outer-logo" id="team1LogoDrop">
+      <img id="team1Logo" src="" alt="T1 Logo" class="massive-logo">
+    </div>
+
+    <div class="outer-logo right-outer-logo" id="team2LogoDrop">
+      <img id="team2Logo" src="" alt="T2 Logo" class="massive-logo">
+    </div>
+
+  </div>
+
+  <script src="overlay.js"></script>
+</body>
+</html>

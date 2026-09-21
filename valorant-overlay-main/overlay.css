@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Rajdhani:wght@600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background-color: transparent;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1100px;
+  height: 90px;
+  pointer-events: none;
+}
+
+/* --- 1. Continuous Top Row --- */
+.hud-top-bar {
+  display: flex;
+  width: 100%;
+  height: 32px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  
+  /* NEW: Gradient Bottom Border */
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to right, #00f0ba 0%, #00f0ba 35%, #33475b 45%, #33475b 55%, #ff4655 65%, #ff4655 100%) 1;
+}
+
+/* Series Scores */
+.score-box {
+  font-family: 'Teko', sans-serif;
+  font-size: 26px;
+  line-height: 1;
+  width: 32px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 12, 18, 1);
+}
+
+.left-score {
+  color: #00f0ba;
+  border-left: 3px solid #00f0ba;
+}
+
+.right-score {
+  color: #ff4655;
+  border-right: 3px solid #ff4655;
+}
+
+/* Team Names */
+.team-meta {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(20, 28, 38, 0.95) 0%, rgba(26, 36, 48, 0.92) 100%);
+}
+
+.left-meta {
+  justify-content: flex-start;
+  padding-left: 12px;
+}
+
+.right-meta {
+  justify-content: flex-end;
+  padding-right: 12px;
+}
+
+.team-name {
+  padding-top: 4px;
+  font-weight: 700;
+  font-size: 22px;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  
+}
+
+/* Match Info (Center) */
+.center-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #0f1923;
+  padding: 0 16px;
+  gap: 8px;
+  z-index: 55;
+}
+
+.match-phase {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ece8e1;
+  letter-spacing: 1.5px;
+  margin-top: 2px;
+}
+
+.match-meta {
+  font-size: 18px;
+  font-weight: 800;
+  color: #7b8e9f;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* --- 2. Outer Team Logos (Flanking the character boxes) --- */
+.outer-logo {
+  position: absolute;
+  top: 0; /* Aligns with the top of your main bar */
+  width: 100px; /* Much larger container */
+  height: 70px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.left-outer-logo {
+  /* Pushes the logo outside the left edge of the 1100px main container */
+  left: -100px; 
+}
+
+.right-outer-logo {
+  /* Pushes the logo outside the right edge of the 1100px main container */
+  right: -100px; 
+}
+
+.massive-logo {
+  max-width: 70px;
+  max-height: 70px;
+  object-fit: contain;
+  /* Optional: adds a subtle drop shadow to make them pop against the game background */
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.6));
+}
+
+.massive-logo[src=""],
+.massive-logo:not([src]) {
+  display: none;
+}
+
+/* --- Top Left Map Box --- */
+.map-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 20px 4px 16px;
+  background: linear-gradient(180deg, rgba(20, 28, 38, 0.95) 0%, rgba(26, 36, 48, 0.92) 100%);
+  border-bottom: 2px solid #33475b;
+  border-right: 2px solid #33475b;
+  z-index: 10;
+}
+
+.map-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 2px;
+  color: #7b8e9f; 
+  letter-spacing: 1px;
+}
+
+.map-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff; 
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+/* --- Top Right League Box --- */
+.league-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 16px 4px 20px;
+  background: linear-gradient(180deg, rgba(20, 28, 38, 0.95) 0%, rgba(26, 36, 48, 0.92) 100%);
+  border-bottom: 2px solid #33475b;
+  border-left: 2px solid #33475b;
+  z-index: 10;
+}
+
+.league-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #7b8e9f;
+  letter-spacing: 1px;
+}
+
+.league-name {
+  font-family: 'Rajdhani', sans-serif;
+  margin-top: 1px;
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+}
+
+.league-logo-img {
+  height: 24px;
+  max-width: 40px;
+  object-fit: contain;
+}
+
+.league-logo-img[data-league="GLEC"] {
+  transform: scale(1.3);
+  padding-bottom: 1px;
+  padding-right: 3px;
+}
+
+.league-logo-img[src=""],
+.league-logo-img:not([src]) {
+  display: none;
+}
