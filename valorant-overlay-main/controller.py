@@ -4,8 +4,13 @@ import tkinter as tk
 from tkinter import filedialog, ttk
 import base64
 import mimetypes
+import sys
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+if getattr(sys, 'frozen', False):
+    SCRIPT_DIR = os.path.dirname(sys.executable)
+else:
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    
 DATA_FILE = os.path.join(SCRIPT_DIR, "overlay_data.json")
 
 class FastValorantController(tk.Tk):
