@@ -163,7 +163,7 @@ body {
   align-items: center;
   gap: 8px;
   padding: 4px 20px 4px 16px;
-  background: linear-gradient(180deg, rgba(20, 28, 38, 0.95) 0%, rgba(26, 36, 48, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(20, 28, 38, 1.00) 0%, rgba(26, 36, 48, 1.00) 100%);
   border-bottom: 2px solid #33475b;
   border-right: 2px solid #33475b;
   z-index: 10;
@@ -197,7 +197,7 @@ body {
   align-items: center;
   gap: 10px;
   padding: 4px 16px 4px 20px;
-  background: linear-gradient(180deg, rgba(20, 28, 38, 0.95) 0%, rgba(26, 36, 48, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(20, 28, 38, 1.00) 0%, rgba(26, 36, 48, 1.00) 100%);
   border-bottom: 2px solid #33475b;
   border-left: 2px solid #33475b;
   z-index: 10;
